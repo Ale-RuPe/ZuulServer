@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-zuul-server
+server:  port: 8765
+  
+eureka:  client:    service-url:      default-zone: http://localhost:8761
+      
+zuul:  host:    connect-timeout-millis: 5000000
+    socket-timeout-millis: 500000
+  routes:    sucursales-estado:
+      path: /api/v1/sucursales/retrieve
+      service-id: MAFCH-D-SUCURSALES
+      strip-prefix: true 
